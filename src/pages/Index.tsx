@@ -1,13 +1,35 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from 'react';
+import { LanguageProvider } from '../contexts/LanguageContext';
+import Calculator from '../components/Calculator';
+import Header from '../components/Header';
 
 const Index = () => {
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+  
+  const toggleTheme = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('light');
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+      document.documentElement.classList.remove('light');
+    }
+  };
+  
+  // Set initial theme class
+  React.useEffect(() => {
+    document.documentElement.classList.add('dark');
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <LanguageProvider>
+      <div className="min-h-screen">
+        <Header toggleTheme={toggleTheme} />
+        <Calculator />
       </div>
-    </div>
+    </LanguageProvider>
   );
 };
 
