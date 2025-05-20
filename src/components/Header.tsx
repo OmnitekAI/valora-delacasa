@@ -2,7 +2,7 @@
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Button } from "@/components/ui/button";
-import { Calendar, Save, FileExport, FileImport } from 'lucide-react';
+import { Calendar, Save, FileText, FileInput } from 'lucide-react';
 
 interface HeaderProps {
   toggleTheme: () => void;

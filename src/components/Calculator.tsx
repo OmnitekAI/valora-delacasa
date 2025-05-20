@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Formula, FormulaResult, Ingredient } from '../types';
@@ -13,7 +12,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-import { Save, CalendarArrowDown, FileExport, FileImport } from 'lucide-react';
+import { Save, FileText, FileInput } from 'lucide-react';
 
 import IngredientsList from './IngredientsList';
 import ProductionSettings from './ProductionSettings';
@@ -160,11 +159,11 @@ const Calculator: React.FC = () => {
                 </div>
                 <div className="flex space-x-2">
                   <Button variant="outline" size="sm" onClick={handleExport}>
-                    <FileExport className="h-4 w-4 mr-2" />
+                    <FileText className="h-4 w-4 mr-2" />
                     {t('calculator.export')}
                   </Button>
                   <Button variant="outline" size="sm" onClick={() => setImportDialogOpen(true)}>
-                    <FileImport className="h-4 w-4 mr-2" />
+                    <FileInput className="h-4 w-4 mr-2" />
                     {t('calculator.import')}
                   </Button>
                 </div>

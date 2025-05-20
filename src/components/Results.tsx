@@ -1,10 +1,9 @@
-
 import React from 'react';
 import { FormulaResult } from '../types';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { formatCurrency, formatTime } from '../services/calculator';
-import { CalendarArrowUp, Chart, ChartPie } from 'lucide-react';
+import { CalendarArrowUp, ChartPie } from 'lucide-react';
 
 interface ResultsProps {
   results: FormulaResult | null;
